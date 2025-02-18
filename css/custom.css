@@ -1,0 +1,45 @@
+/* 卡片擦亮*/
+#recent-posts>.recent-post-item:not(a)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, white, transparent);
+    transform: translateX(-200%);
+    transition: transform 0.5s linear;
+    z-index: 1;
+}
+
+#recent-posts>.recent-post-item:not(a):hover::before {
+    transform: translateX(100%) skewX(-60deg);
+}
+
+
+/* 文章标签*/
+#recent-posts .recent-post-item .card-tag {
+    left: 0;
+    border-bottom-right-radius: 12px;
+    position: absolute;
+    top: 0;
+    padding: 3px 8px;
+    background: linear-gradient(90deg, #e5b085, #d48f16);
+    color: #fff;
+    font-size: .85em;
+    z-index: 1;
+}
+
+
+/*字体*/
+@font-face {
+    font-family: 'DingTalk-JinBuTi';
+    src: url('../../fonts/DingTalk-JinBuTi.woff2') format('woff2'),
+        /* 提供 WOFF2 格式 */
+        url('../../fonts/DingTalk-JinBuTi.woff') format('woff'),
+        /* 提供 WOFF 格式 */
+        url('../../fonts/DingTalk-JinBuTi.ttf') format('truetype');
+    /* 提供 TTF 格式 */
+    font-weight: normal;
+    font-style: normal;
+}
